@@ -128,11 +128,15 @@ class LocationProvider extends ChangeNotifier {
   Future<bool> addCurrentToFavorites() async {
     final loc = selectedLocation;
     if (loc == null) return false;
-    return await _storageService.addFavoriteCity(loc);
+    final result = await _storageService.addFavoriteCity(loc);
+    notifyListeners();
+    return result;
   }
 
   Future<bool> addToFavorites(LocationModel location) async {
-    return await _storageService.addFavoriteCity(location);
+    final result = await _storageService.addFavoriteCity(location);
+    notifyListeners();
+    return result;
   }
 
   Future<void> removeFromFavorites(LocationModel location) async {

@@ -114,6 +114,23 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
+          // Nút Yêu thích
+          if (location != null)
+            _AppBarIconButton(
+              icon: lp.isFavorite(location)
+                  ? Icons.favorite_rounded
+                  : Icons.favorite_border_rounded,
+              iconColor: lp.isFavorite(location) ? Colors.pinkAccent : Colors.white,
+              tooltip: 'Yêu thích',
+              onTap: () {
+                if (lp.isFavorite(location)) {
+                  lp.removeFromFavorites(location);
+                } else {
+                  lp.addToFavorites(location);
+                }
+              },
+            ),
+          if (location != null) const SizedBox(width: 8),
           // Nút Search
           _AppBarIconButton(
             icon: Icons.search_rounded,
@@ -366,11 +383,13 @@ class _AppBarIconButton extends StatelessWidget {
   final IconData icon;
   final String tooltip;
   final VoidCallback onTap;
+  final Color iconColor;
 
   const _AppBarIconButton({
     required this.icon,
     required this.tooltip,
     required this.onTap,
+    this.iconColor = Colors.white,
   });
 
   @override
@@ -387,7 +406,7 @@ class _AppBarIconButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
             border: Border.all(color: Colors.white.withValues(alpha: 0.2)),
           ),
-          child: Icon(icon, color: Colors.white, size: 20),
+          child: Icon(icon, color: iconColor, size: 20),
         ),
       ),
     );

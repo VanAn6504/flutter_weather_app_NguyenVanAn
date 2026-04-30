@@ -6,9 +6,7 @@ class ApiConfig {
   // API Credentials
   static String get apiKey => dotenv.env['OPENWEATHER_API_KEY'] ?? '';
 
-  static String get baseUrl =>
-      dotenv.env['OPENWEATHER_BASE_URL'] ??
-      'https://api.openweathermap.org/data/2.5';
+  static const String baseUrl = 'https://api.openweathermap.org/data/2.5';
 
   // API Endpoints
   static String get currentWeatherEndpoint => '$baseUrl/weather';
