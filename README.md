@@ -2,6 +2,8 @@
 
 Ứng dụng dự báo thời tiết toàn diện được xây dựng bằng **Flutter**, tích hợp dữ liệu thời gian thực từ **OpenWeatherMap API**. Dự án này tập trung vào kiến trúc sạch, quản lý trạng thái hiệu quả và trải nghiệm người dùng mượt mà.
 
+Demo: https://drive.google.com/file/d/18UjWFWV8tMbjKjWuKTpBqwc0uoq3gOYq/view?usp=drive_linkhttps://drive.google.com/file/d/18UjWFWV8tMbjKjWuKTpBqwc0uoq3gOYq/view?usp=drive_link
+
 ##  Tính năng chính
 
 ### Dự báo thời tiết thời gian thực
